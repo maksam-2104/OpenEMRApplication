@@ -29,7 +29,7 @@ public class LoginTest extends WebDriverWrapper {
 	        Assert.assertEquals(actualvalue, expectedValue);
 	}
 
-	@Test(dataProvider="validData",dataProviderClass = DataProviderUtils.class)
+	@Test(dataProvider="validCredentialExcelData1",dataProviderClass = DataProviderUtils.class)
 	public void validCredentialTest(String username,String password,String languageText,String expectedValue) {
 		
 		LoginPage login=new LoginPage(driver);
@@ -43,7 +43,7 @@ public class LoginTest extends WebDriverWrapper {
 	        Assert.assertEquals(actualvalue, expectedValue);
 	}
 
-	@Test(dataProvider = "validData",dataProviderClass = DataProviderUtils.class)
+	@Test(dataProvider = "invalidData",dataProviderClass = DataProviderUtils.class)
 	public void validateUIComponentTest() {
 
 		String actualDescription = driver.findElement(By.xpath("//p[contains(text(),'most')]")).getText();

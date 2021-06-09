@@ -1,10 +1,15 @@
 package com.cyient.utility;
 
+import java.io.IOException;
+
 import org.testng.annotations.DataProvider;
 
 public class DataProviderUtils {
 	@DataProvider
-	public Object[][] validData(){
+	public Object[][] validCredentialExcelData(){
+		
+		
+	
 		
 		Object[][] main= new Object[3][4];
 		main[0][0]="admin";
@@ -43,6 +48,10 @@ public class DataProviderUtils {
        
         return main;
     }
-	
+	@DataProvider
+	public Object[][] validCredentialExcelData1() throws IOException{
+		Object[][] main=ExcelUtils.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRdata.xlsx","ValidCredentialTest");
+	return main;
+	}
 	
 }
